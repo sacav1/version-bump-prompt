@@ -12,7 +12,7 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">Version-bump-prompt</h1>
-      <h2 class="project-tagline">Automatically (or with prompts) bump your version number, commit, tag, and push</h2>
+      <h2 class="project-tagline">Automatically (or with prompts) bump your version numbers, commit, tag, and push to git</h2>
       <a href="https://github.com/BigstickCarpet/version-bump-prompt" class="btn">View on GitHub</a>
       <a href="https://github.com/BigstickCarpet/version-bump-prompt/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/BigstickCarpet/version-bump-prompt/tarball/master" class="btn">Download .tar.gz</a>
@@ -23,13 +23,13 @@
 <a href="https://www.npmjs.com/package/version-bump-prompt"><img src="http://img.shields.io/npm/v/version-bump-prompt.svg" alt="npm"></a>
 <a href="http://en.wikipedia.org/wiki/MIT_License"><img src="https://img.shields.io/npm/l/version-bump-prompt.svg" alt="License"></a></p>
 
-<p><img src="http://bigstickcarpet.com/version-bump-prompt/img/screenshot.gif" alt="Build Status"></p>
+<p><img src="http://bigstickcarpet.com/version-bump-prompt/img/screenshot.gif" alt="Screenshot"></p>
 
 <h4>
-<a id="automate-your-release-process-with-a-single-command-that" class="anchor" href="#automate-your-release-process-with-a-single-command-that" aria-hidden="true"><span class="octicon octicon-link"></span></a>Automate your release process with a single command that:</h4>
+<a id="automate-your-release-process-with-a-single-command-that-can" class="anchor" href="#automate-your-release-process-with-a-single-command-that-can" aria-hidden="true"><span class="octicon octicon-link"></span></a>Automate your release process with a single command that can:</h4>
 
 <ul>
-<li>Bumps the version number of:
+<li>Bump the version number of JSON manifets, including:
 
 <ul>
 <li> <code>package.json</code>
@@ -40,9 +40,10 @@
 </li>
 </ul>
 </li>
-<li>Creates a GIT tag</li>
-<li>Pushes to GIT</li>
-<li>Optionally prompts for type of version bump</li>
+<li>Commit changes to GIT</li>
+<li>Tag the commit with the version number</li>
+<li>Push the commit to remote</li>
+<li>Optionally prompt for the type of version bump (major, minor, revision, beta, etc.)</li>
 </ul>
 
 <h2>
@@ -59,15 +60,19 @@
 
 <ul>
 <li>
-<code>--patch</code>, <code>--minor</code>, <code>--major</code>, <code>--prompt</code> - Increase corresponding version number (or prompt)</li>
+<code>--major</code>, <code>--minor</code>, <code>--patch</code>, <code>--premajor</code>, <code>--preminor</code>, <code>--prepatch</code>, <code>--prerelease</code><br> - Bump the corresponding version number</li>
+<li>
+<code>--prompt</code> - Prompt for which version to bump</li>
+<li>
+<code>--preid [name]</code> - The identifier for pre-release versions (defaults to <code>beta</code>)</li>
 <li>
 <code>--commit</code> - Commit changed files to Git</li>
 <li>
-<code>--tag</code> - Commit and tag changed files in Git</li>
+<code>--tag</code> - Tag the commit with the new version number</li>
 <li>
-<code>--push</code> - Commit and push changed files to remote Git repo</li>
+<code>--push</code> - Push the commit to your remote Git repo</li>
 <li>
-<code>--all</code> - Commit/tag/push all files that have changed, not just the ones changed by bump</li>
+<code>--all</code> - Commit/tag/push <em>all</em> pending files, not just the ones changed by bump</li>
 </ul>
 
 <h2>
