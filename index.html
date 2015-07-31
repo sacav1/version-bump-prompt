@@ -19,8 +19,8 @@
     </section>
 
     <section class="main-content">
-      <p><a href="https://travis-ci.org/BigstickCarpet/version-bump-prompt"><img src="https://img.shields.io/travis/BigstickCarpet/version-bump-prompt.svg" alt="Build Status"></a>
-<a href="https://david-dm.org/bigstickcarpet/version-bump-prompt"><img src="https://img.shields.io/david/bigstickcarpet/version-bump-prompt.svg" alt="Dependencies"></a>
+      <p><a href="https://travis-ci.org/BigstickCarpet/version-bump-prompt"><img src="https://api.travis-ci.org/BigstickCarpet/version-bump-prompt.svg" alt="Build Status"></a>
+<a href="https://david-dm.org/bigstickcarpet/version-bump-prompt"><img src="https://david-dm.org/BigstickCarpet/version-bump-prompt.svg" alt="Dependencies"></a>
 <a href="https://www.npmjs.com/package/version-bump-prompt"><img src="http://img.shields.io/npm/v/version-bump-prompt.svg" alt="npm"></a>
 <a href="http://en.wikipedia.org/wiki/MIT_License"><img src="https://img.shields.io/npm/l/version-bump-prompt.svg" alt="License"></a></p>
 
@@ -41,6 +41,15 @@
 </li>
 </ul>
 </li>
+<li>Replace version number strings in text files, including:
+
+<ul>
+<li> config files</li>
+<li> source code</li>
+<li> README files</li>
+<li> license files</li>
+</ul>
+</li>
 <li>Commit changes to GIT</li>
 <li>Tag the commit with the version number</li>
 <li>Push the commit to remote</li>
@@ -56,25 +65,33 @@
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<pre><code>bump [options]
-</code></pre>
+<div class="highlight highlight-bash"><pre>Usage: bump [options]
 
-<ul>
-<li>
-<code>--major</code>, <code>--minor</code>, <code>--patch</code>, <code>--premajor</code>, <code>--preminor</code>, <code>--prepatch</code>, <code>--prerelease</code><br> - Bump the corresponding version number</li>
-<li>
-<code>--prompt</code> - Prompt for which version to bump</li>
-<li>
-<code>--preid [name]</code> - The identifier for pre-release versions (defaults to <code>beta</code>)</li>
-<li>
-<code>--commit</code> - Commit changed files to Git</li>
-<li>
-<code>--tag</code> - Tag the commit with the new version number</li>
-<li>
-<code>--push</code> - Push the commit to your remote Git repo</li>
-<li>
-<code>--all</code> - Commit/tag/push <em>all</em> pending files, not just the ones changed by bump</li>
-</ul>
+Options:
+
+  -h, --help            output usage information
+  -V, --version         output the version number
+  --major               Increase major version
+  --minor               Increase minor version
+  --patch               Increase patch version
+  --premajor            Increase major version, pre-release
+  --preminor            Increase preminor version, pre-release
+  --prepatch            Increase prepatch version, pre-release
+  --prerelease          Increase prerelease version
+  --prompt              Prompt <span class="pl-k">for</span> <span class="pl-smi">type</span> of bump (patch, minor, major, premajor, prerelase, etc.)
+  --preid <span class="pl-k">&lt;</span>name<span class="pl-k">&gt;</span>        The identifier <span class="pl-k">for</span> <span class="pl-smi">prerelease</span> versions (default is <span class="pl-s"><span class="pl-pds">"</span>beta<span class="pl-pds">"</span></span>)
+  --commit              Commit changed files to Git
+  --tag                 Tag the commit <span class="pl-k">in</span> Git
+  --push                Push the Git commit
+  --all                 Commit/tag/push ALL pending files, not just the ones changed by bump
+  --grep <span class="pl-k">&lt;</span>filespec...<span class="pl-k">&gt;</span>  Files and/or globs to <span class="pl-k">do</span> a text-replace of the old version number with the new one
+
+Examples:
+
+  $ bump --patch
+  $ bump --major --tag
+  $ bump --patch --tag --all --grep README.md LICENSE
+  $ bump --prompt --tag --push --all</pre></div>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
