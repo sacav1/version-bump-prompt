@@ -114,6 +114,7 @@ function bumpManifest (manifest, defaultBumpType, options) {
     if (options.prompt) {
       // Prompt the user for the type of bump to perform
       let version = api.versionInfo(manifest, options);
+      console.log('\n/!\\ version-bump-prompt spéciale EcoleDirecte. Originale : https://github.com/BigstickCarpet/version-bump-prompt /!\\');
       console.log('\nCurrent version in %s is %s', manifest, version.current);
 
       inquirer.prompt([
